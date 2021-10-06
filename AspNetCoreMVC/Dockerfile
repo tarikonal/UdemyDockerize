@@ -8,4 +8,6 @@ FROM mcr.microsoft.com/dotnet/aspnet:3.1
 WORKDIR /app
 COPY --from=build /app/out .
 ENV ASPNETCORE_URLS="http://*:4500"
+ENV ASPNETCORE_ENVIRONMENT="DEVELOPMENT"
+ENV MySqlCon="uzak sunucu veritabaný yolu"
 ENTRYPOINT ["dotnet","AspNetCoreMVC.dll"]
